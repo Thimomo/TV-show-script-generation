@@ -1,6 +1,7 @@
 import os
 import re
 
+# Mijn Git Directory
 input_dir = r'C:\Users\koenv\OneDrive - UvA\2023-2024\PAV\TTTV PAV\TTTV\Teksten'
 output_file = 'output.txt'
 
