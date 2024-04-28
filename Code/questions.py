@@ -53,8 +53,9 @@ with open('output2.txt', 'r') as myFile:
     top_n = 3
     top_sentences = Counter(line_lens).most_common(top_n)
 
+    print(f'De top {top_n} langste zinnen zijn:')
     for sentence, length in top_sentences:
-        print(f'Zin index: {sentence}, Lengte: {length}')
+        print(f'Zin {sentence} met {length} woorden')
 
 # Hoe groot is de woordenschat? 
 
@@ -66,5 +67,6 @@ with open('output2.txt', 'r') as myFile:
 
     top_words = Counter(words).most_common(top_n)
 
+    print(f'De top {top_n} meest voorkomende woorden zijn:')
     for word, count in top_words:
-        print(f'Woord: {word}, Hoeveelheid: {count}')
+        print(f"Het woord '{word}', die {count} keer voorkomt")
