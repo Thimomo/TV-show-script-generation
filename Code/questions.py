@@ -4,11 +4,11 @@ with open('output2.txt', 'r') as myFile:
     text = myFile.read()
 
 # Hoe lang is je tekst? 
-    words = 0
+    totalwords = 0
     for line in text.split('\n'):   
-        words += len(line.split())
+        totalwords += len(line.split())
 
-    print(f'Totaal aantal woorden = {words}')
+    print(f'Totaal aantal woorden = {totalwords}')
 
 # Hoeveel zinnen zijn er? 
 
@@ -56,6 +56,8 @@ with open('output2.txt', 'r') as myFile:
     print(f'De top {top_n} langste zinnen zijn:')
     for sentence, length in top_sentences:
         print(f'Zin {sentence} met {length} woorden')
+
+    print(f'Het gemiddelde aantal woorden per zin is {float(totalwords/num_sentences)}')
 
 # Hoe groot is de woordenschat? 
 
