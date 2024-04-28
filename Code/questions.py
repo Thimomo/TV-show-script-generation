@@ -8,7 +8,7 @@ with open('output2.txt', 'r') as myFile:
     for line in text.split('\n'):   
         words += len(line.split())
 
-    # print(f'Total words = {words}')
+    print(f'Totaal aantal woorden = {words}')
 
 # Hoeveel zinnen zijn er? 
 
@@ -32,7 +32,7 @@ with open('output2.txt', 'r') as myFile:
         if count == 1:
             hapaxes.append(word)
 
-    # print(hapaxes)
+    print(f'Er zijn {len(hapaxes)} hapaxen')
 
 # Hoe lang zijn de zinnen? 
 
@@ -61,7 +61,7 @@ with open('output2.txt', 'r') as myFile:
 
     vocab = len(words)
 
-    # print(f'There are {vocab} different words in our corpus')
+    print(f'Er zijn {vocab} verschillende woorden in onze corpus')
 
 # Wat zijn de meest voorkomende woorden? 
 
