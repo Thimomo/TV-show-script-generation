@@ -8,24 +8,32 @@ def process_file(input_file, output_file):
         content = f.read()
     
     # Remove unwanted strings
-    content = content.replace("!Toph|", "") 
-    content = content.replace("|-", "")
     content = re.sub(r'\[.*?\] ', '', content)
     content = re.sub(r'\[.*?\]', '', content)
 
     # Remove unwanted punctuation and convert to lowercase
-    content = content.replace("...", "")
-    content = content.replace(". ", '\n')
-    content = content.replace("! ", '\n')
-    content = content.replace("? ", '\n')
-    content = content.replace(".", "")
-    content = content.replace(",", "")
-    content = content.replace("'", "")
-    content = content.replace('"', "")
-    content = content.replace("?", "")
-    content = content.replace("!", "")
-    content = content.lower()
+
+    replacement = {
+                    "!Toph|": "",
+                    "|-": "",
+                    "...": "",
+                    # note the spaces
+                    ". ": '\n',
+                    "! ": '\n',
+                    "? ": '\n',
+                    ".": "",
+                    ",": "",
+                    "'": "",
+                    '"': "",
+                    "?": "",
+                    "!": ""
+                    }
     
+    for case, sub in replacement.items():
+        content.replace(case, sub)
+
+    content.lower()
+
     # Remove empty lines
     lines = content.split('\n')
     non_empty_lines = [line for line in lines if line.strip()]
