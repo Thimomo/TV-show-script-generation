@@ -18,10 +18,10 @@ The project is broken down into a multi-stage pipeline to take raw, messy text f
 ### Cleaning & Normalization
 - contractions.py: Uses nltk to expand English contractions (e.g., turning "don't" into "do not"). This is crucial for accurate word counting and vocabulary analysis.
 
-- strip.py: The "scrubber." It removes brackets, unwanted punctuation, and handles sentence segmentation by replacing period symbols with newlines.
+- strip.py: This script removes brackets, unwanted punctuation, and handles sentence segmentation by replacing period symbols with newlines.
 
 ### Analysis
-questions.py: This script crawls the cleaned data to answer:
+questions.py: This script goes over the cleaned data to answer:
 
 What is the total word count?
 
